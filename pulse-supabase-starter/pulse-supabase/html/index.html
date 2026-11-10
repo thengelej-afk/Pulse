@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#6857e8">
+  <title>Pulse | Real-time messaging</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <main class="auth-screen" id="authScreen">
+    <section class="auth-card">
+      <a class="logo" href="#">pulse<span>.</span></a>
+      <p class="eyebrow">YOUR SPACE TO CONNECT</p>
+      <h1 id="authTitle">Welcome back</h1>
+      <p class="muted" id="authSubtitle">Sign in to continue to your messages.</p>
+      <form id="authForm">
+        <label id="usernameLabel" class="hidden">Username<input id="usernameInput" autocomplete="username" placeholder="Choose a username"></label>
+        <label>Email address<input id="emailInput" type="email" autocomplete="email" required placeholder="you@example.com"></label>
+        <label>Password<input id="passwordInput" type="password" autocomplete="current-password" required minlength="6" placeholder="At least 6 characters"></label>
+        <button class="primary full" id="authSubmit" type="submit">Sign in</button>
+      </form>
+      <p class="auth-switch"><span id="authSwitchText">New to Pulse?</span> <button id="authSwitch" type="button">Create an account</button></p>
+      <p class="notice" id="authNotice" role="status"></p>
+    </section>
+  </main>
+
+  <div class="app hidden" id="app">
+    <aside class="sidebar">
+      <a class="logo" href="#">pulse<span>.</span></a>
+     
+<div class="signed-in">SIGNED IN AS <strong id="myUsername"></strong></div>
+
+<div class="my-profile">
+  <img id="myAvatar" class="my-avatar hidden" alt="Your profile picture">
+  <div id="myAvatarFallback" class="my-avatar-fallback">P</div>
+  <label class="avatar-upload-label" for="avatarInput">
+    Change profile picture
+  </label>
+  <input
+    type="file"
+    id="avatarInput"
+    accept="image/png,image/jpeg,image/webp"
+    hidden
+  >
+  <p id="avatarNotice" class="muted"></p>
+</div>
+
+      <div class="section-title">START A CHAT</div>
+      <form class="user-search" id="userSearchForm">
+        <input id="userSearchInput" placeholder="Find username..." autocomplete="off" aria-label="Find a username">
+        <button class="primary" type="submit">Find</button>
+      </form>
+      <div id="searchResults" class="search-results"></div>
+      <div class="section-title chats-heading">YOUR CONVERSATIONS</div>
+      <div class="conversation-list" id="conversationList"></div>
+      <button class="signout" id="signOut" type="button">Sign out</button>
+    </aside>
+    <section class="chat-panel">
+      <header class="chat-header">
+        <div class="user-details">
+          <div class="avatar" id="chatAvatar">P</div>
+          <div><h2 id="chatName">Your messages</h2><p id="chatStatus">Choose a conversation to get started</p></div>
+        </div>
+        <span class="live-label"><i></i> LIVE</span>
+      </header>
+      <div class="messages" id="messages"><div class="welcome"><div class="welcome-icon">✦</div><h2>Make a connection.</h2><p>Find someone by username or open a conversation.</p></div></div>
+      <form class="composer" id="messageForm">
+        <input id="messageInput" placeholder="Write a message..." autocomplete="off" disabled aria-label="Write a message">
+        <button class="primary" id="sendButton" type="submit" disabled>Send ↗</button>
+      </form>
+      <p class="footer-note">Be kind. Be human. Be you. · Powered by Pulse</p>
+    </section>
+  </div>
+  <script type="module" src="../java/app.js"></script>
+  
+</body>
+</html>
